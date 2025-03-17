@@ -1,5 +1,5 @@
 # Retail Wiki
-pages link: https://pages.github.ibm.com/jiehou/retailwiki/ 
+pages link: https://houjie1979.github.io/retailwiki/  
 
 # Installation
 ```shell
