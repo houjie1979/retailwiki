@@ -3,7 +3,7 @@ pages link: https://pages.github.ibm.com/jiehou/retailwiki/
 
 # Installation
 ```shell
-git clone https://github.ibm.com/YourName/retailwiki  
+git clone https://github.com/YourName/retailwiki  
 cd retailwiki  
 pip install -U sphinx  
 ## optional
