@@ -2,7 +2,10 @@ SAP Logistics Module
 ====================
 
 This is the documentation for the **SAP Logistics Module**. It covers the key features and functionalities of the logistics module in SAP.
-
+.. include:: /index.rst
+   :start-after: Retailwiki documentation
+   :end-before: Indices and tables
+   
 .. contents:: Table of Contents
    :depth: 2
 

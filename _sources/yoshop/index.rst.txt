@@ -1,0 +1,213 @@
+Pandoc
+
+https://github.com/jgm/pandoc/releases/tag/3.6.4
+
+youshop
+=======
+
+官网资料
+--------
+
+后端：\ https://gitee.com/xany/yoshop2.0
+
+前端：\ https://gitee.com/xany/yoshop2.0-uniapp
+
+Optional: 后台VUE端（前端工程文件，部署时无需下载，仅前端开发时用到）
+
+下载地址：\ https://gitee.com/xany/yoshop2.0-store
+
+下载地址：\ https://gitee.com/xany/yoshop2.0-admin
+
+安装教程： https://www.yiovo.com/doc/10023
+
+默认的后台地址
+
+- 超管后台：\ `https://www.你的域名.com/admin <https://www.xn--6qqv7i2xdt95b.com/admin>`__
+
+- 商户后台：\ `https://www.你的域名.com/store <https://www.xn--6qqv7i2xdt95b.com/store>`__
+
+- 默认的账户密码：admin yinghuo
+
+本地安装
+--------
+
+代码仓库
+~~~~~~~~
+
+注：gitee上yoshop新版本要求db版本已不适配xampp7，故使用yoshop2.11版本
+
+|文本 AI 生成的内容可能不正确。|
+
+前端：\ https://github.ibm.com/jiehou/yoshop2.0-uniapp
+
+需要HBuildx才能编译，不做前端可以只下载build后的yoshop.zip
+https://github.ibm.com/jiehou/yoshop2.0-uniapp/releases/tag/v2.11
+
+后端：\ https://github.ibm.com/jiehou/yoshop2.0
+
+Xampp
+~~~~~
+
+集成apache + php+ mysql
+
+win:
+https://sourceforge.net/projects/xampp/files/XAMPP%20Windows/7.4.33/
+
+mac:
+https://sourceforge.net/projects/xampp/files/XAMPP%20Mac%20OS%20X/7.4.33/
+
+如果安装了多个版本xampp的参考目录设置 C:\\xampp\\7.4.33
+
+.. image:: /_static/images/yoshop/image1.png
+   :width: 5.22917in
+   :height: 2.3125in
+
+httpd.conf
+^^^^^^^^^^
+
+C:\\xampp\\7.4.33\\apache\\conf\\httpd.conf
+
+- 添加端口
+
+查找 Listen 80， 添加一行 Listen 8085 作为youshop服务端口
+
+- 设置权限
+
+.. code-block:: shell
+
+   <Directory />
+       AllowOverride none
+       Require all granted
+   </Directory>
+
+- 加载proxy模块
+
+LoadModule proxy_module modules/mod_proxy.so
+
+LoadModule proxy_http_module modules/mod_proxy_http.so
+
+httpd-vhosts.conf
+^^^^^^^^^^^^^^^^^
+
+C:\\xampp\\7.4.33\\apache\\conf\\extra\\httpd-vhosts.conf
+
+添加VirtualHost
+
+.. code-block:: shell
+
+   #yoshop2 api
+   <VirtualHost *:8085>
+       DocumentRoot "C:/Project/study/yoshop/git/yoshop2.0/public"
+       ServerName yoshop
+       <Directory "C:/Project/study/yoshop/git/yoshop2.0/public">
+           Options Indexes FollowSymLinks Includes ExecCGI
+           AllowOverride All
+           Require all granted
+       </Directory>
+   </VirtualHost>
+
+   #local web folder
+   <VirtualHost *:80>
+       DocumentRoot "C:/Project/WEB_DIR"
+       ServerName localhost
+       ProxyPass /yoshopAPI http://localhost:8085
+       ProxyPass /payment2c2pAPI http://localhost:3000
+       ProxyPass /uploads http://localhost:8085/uploads
+       <Directory "C:/Project/WEB_DIR">
+           Options Indexes FollowSymLinks Includes ExecCGI
+           AllowOverride All
+           Require all granted
+       </Directory>
+   </VirtualHost>
+
+Mysql
+~~~~~
+
+Start mysql via XAPMM Control panel
+
+.. image:: /_static/images/yoshop/image3.png
+   :width: 6.5in
+   :height: 1.88264in
+
+http://localhost/phpmyadmin/
+
+root账户密码初始为空，修改密码
+
+.. image:: /_static/images/yoshop/image4.png
+   :width: 6.40625in
+   :height: 4.23958in
+
+config.inc.php
+^^^^^^^^^^^^^^
+
+C:\\xampp\\7.4.33\\phpMyAdmin\\config.inc.php
+
+.. image:: /_static/images/yoshop/image5.png
+   :width: 5.06321in
+   :height: 3.37547in
+
+.. image:: /_static/images/yoshop/image6.png
+   :width: 4.69857in
+   :height: 1.21892in
+
+创建db 名称yoshop
+
+.. image:: /_static/images/yoshop/image7.png
+   :width: 1.97944in
+   :height: 2.38575in
+
+代码下载
+~~~~~~~~
+
+cd C:\\Project\\study\\yoshop\\git
+
+(optional)前端：git clone git@github.ibm.com:jiehou/yoshop2.0-uniapp.git
+
+后端： git clone git@github.ibm.com:jiehou/yoshop2.0.git
+
+注意：后端目录与VirtualHost一致
+
+DocumentRoot "C:/Project/study/yoshop/git/yoshop2.0/public"
+
+安装yoshop
+~~~~~~~~~~
+
+后端
+^^^^
+
+http://localhost:8085/install
+
+.. image:: /_static/images/yoshop/image8.png
+   :width: 5.66746in
+   :height: 1.69815in
+
+.. image:: /_static/images/yoshop/image9.png
+   :width: 6.5in
+   :height: 3.56319in
+
+后端管理
+
+账户密码：admin/yinghuo
+
+http://localhost:8085/admin/
+
+后端店铺
+
+http://localhost:8085/store/
+
+前端
+^^^^
+
+参考\ https://www.yiovo.com/doc/10026 用\ **HBuilderX**\ 编译uniapp工程
+
+将编译后的文件
+从C:\\Project\\study\\yoshop\\git\\yoshop2.0-uniapp\\unpackage\\dist\\build\\web
+
+复制到 C:\\Project\\WEB_DIR\\static\\yoshop
+
+或者直接下载编译完成的
+https://github.ibm.com/jiehou/yoshop2.0-uniapp/releases/tag/v2.11
+
+.. |文本 AI 生成的内容可能不正确。| image:: /_static/images/yoshop/image1.png
+   :width: 5.33408in
+   :height: 1.81275in

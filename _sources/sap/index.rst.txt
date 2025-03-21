@@ -7,3 +7,14 @@ SAP Documentation
    introduction
    modules/finance
    modules/logistics
+
+Introduction
+------------
+
+This is the introduction to SAP documentation.
+
+.. image:: /_static/images/sap/image1.png
+   :width: 400px
+   :height: 300px
+   :alt: SAP Image 1
+   :align: left

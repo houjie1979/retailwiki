@@ -16,5 +16,6 @@ documentation for details.
    :caption: Contents:
 
    sap/index
+   yoshop/index
    mysql/index
    java/index

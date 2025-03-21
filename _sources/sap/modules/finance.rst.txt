@@ -1,7 +1,9 @@
 SAP Finance Module
 ==================
 
-This is the documentation for the **SAP Finance Module**. It covers the key features and functionalities of the finance module in SAP.
+.. include:: /index.rst
+   :start-after: Retailwiki documentation
+   :end-before: Indices and tables
 
 .. contents:: Table of Contents
    :depth: 2
@@ -20,8 +22,6 @@ Key Features
 
 Advanced Topics
 ---------------
-.. _finance-advanced:
-
 ### Financial Reporting
 SAP Finance provides robust financial reporting capabilities, including:
 
@@ -30,7 +30,7 @@ SAP Finance provides robust financial reporting capabilities, including:
 - Cash flow statements
 
 ### Integration with Logistics
-The Finance module integrates closely with the :ref:`SAP Logistics Module <logistics-module>` to ensure seamless financial tracking of goods and services.
+The Finance module integrates closely with the :ref:`logistics-module` to ensure seamless financial tracking of goods and services.
 
 Code Example
 ------------
@@ -52,4 +52,4 @@ External Links
 
 See Also
 --------
-- :ref:`SAP Logistics Module <logistics-module>`
+- :ref:`logistics-module`
