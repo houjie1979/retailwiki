@@ -54,7 +54,7 @@ https://sourceforge.net/projects/xampp/files/XAMPP%20Mac%20OS%20X/7.4.33/
 
 如果安装了多个版本xampp的参考目录设置 C:\\xampp\\7.4.33
 
-.. image:: /_static/images/yoshop/image1.png
+.. image:: /_static/images/yoshop/image2.png
    :width: 5.22917in
    :height: 2.3125in
 
