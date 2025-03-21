@@ -24,6 +24,15 @@ Optional: 后台VUE端（前端工程文件，部署时无需下载，仅前端�
 
 - 默认的账户密码：admin yinghuo
 
+**环境要求**
+
+- Nginx 1.10+
+
+- PHP 7.4
+
+- MySQL 5.6+
+
+
 本地安装
 --------
 
@@ -34,17 +43,27 @@ Optional: 后台VUE端（前端工程文件，部署时无需下载，仅前端�
 
 |文本 AI 生成的内容可能不正确。|
 
-前端：\ https://github.ibm.com/jiehou/yoshop2.0-uniapp
+(optional)前端：\ https://github.ibm.com/jiehou/yoshop2.0-uniapp
 
 需要HBuildx才能编译，不做前端可以只下载build后的yoshop.zip
 https://github.ibm.com/jiehou/yoshop2.0-uniapp/releases/tag/v2.11
 
 后端：\ https://github.ibm.com/jiehou/yoshop2.0
 
+代码下载到本地后的目录参考
+
+前端 C:\\Project\\study\\yoshop\\git\\yoshop2.0-uniapp  
+
+后端 C:\\Project\\study\\yoshop\\git\\yoshop2.0  
+
+注意：后端PHP无需编译，目录与后面配置的apache VirtualHost一致
+
+DocumentRoot "C:/Project/study/yoshop/git/yoshop2.0/public"
+
 Xampp
 ~~~~~
 
-集成apache + php+ mysql
+集成apache + php+ mysql, 有经验者可自行搭建Nginx(1.10+) + php(7.4) + mysql(5.6+)
 
 win:
 https://sourceforge.net/projects/xampp/files/XAMPP%20Windows/7.4.33/
@@ -78,9 +97,12 @@ C:\\xampp\\7.4.33\\apache\\conf\\httpd.conf
 
 - 加载proxy模块
 
-LoadModule proxy_module modules/mod_proxy.so
+.. code-block:: shell
 
-LoadModule proxy_http_module modules/mod_proxy_http.so
+   LoadModule proxy_module modules/mod_proxy.so
+
+   LoadModule proxy_http_module modules/mod_proxy_http.so
+
 
 httpd-vhosts.conf
 ^^^^^^^^^^^^^^^^^
@@ -125,7 +147,7 @@ Start mysql via XAPMM Control panel
    :width: 6.5in
    :height: 1.88264in
 
-http://localhost/phpmyadmin/
+phpmyadmin http://localhost/phpmyadmin/
 
 root账户密码初始为空，修改密码
 
@@ -133,37 +155,30 @@ root账户密码初始为空，修改密码
    :width: 6.40625in
    :height: 4.23958in
 
+.. image:: /_static/images/yoshop/image5.png
+   :width: 5.06321in
+   :height: 3.37547in   
+
 config.inc.php
 ^^^^^^^^^^^^^^
 
 C:\\xampp\\7.4.33\\phpMyAdmin\\config.inc.php
 
-.. image:: /_static/images/yoshop/image5.png
-   :width: 5.06321in
-   :height: 3.37547in
-
 .. image:: /_static/images/yoshop/image6.png
    :width: 4.69857in
    :height: 1.21892in
 
-创建db 名称yoshop
+**重新连接phpmyadmin**
 
 .. image:: /_static/images/yoshop/image7.png
    :width: 1.97944in
    :height: 2.38575in
 
-代码下载
-~~~~~~~~
+**创建db 名称yoshop**
 
-cd C:\\Project\\study\\yoshop\\git
-
-(optional)前端：git clone git@github.ibm.com:jiehou/yoshop2.0-uniapp.git
-
-后端： git clone git@github.ibm.com:jiehou/yoshop2.0.git
-
-注意：后端目录与VirtualHost一致
-
-DocumentRoot "C:/Project/study/yoshop/git/yoshop2.0/public"
+.. image:: /_static/images/yoshop/image8.png
+   :width: 5.66746in
+   :height: 1.69815in
 
 安装yoshop
 ~~~~~~~~~~
@@ -172,10 +187,6 @@ DocumentRoot "C:/Project/study/yoshop/git/yoshop2.0/public"
 ^^^^
 
 http://localhost:8085/install
-
-.. image:: /_static/images/yoshop/image8.png
-   :width: 5.66746in
-   :height: 1.69815in
 
 .. image:: /_static/images/yoshop/image9.png
    :width: 6.5in
