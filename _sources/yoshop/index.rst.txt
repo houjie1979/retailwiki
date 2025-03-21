@@ -41,7 +41,9 @@ Optional: 后台VUE端（前端工程文件，部署时无需下载，仅前端�
 
 注：gitee上yoshop新版本要求db版本已不适配xampp7，故使用yoshop2.11版本
 
-|文本 AI 生成的内容可能不正确。|
+.. |文本 AI 生成的内容可能不正确。| image:: /_static/images/yoshop/image1.png
+   :width: 5.33408in
+   :height: 1.81275in
 
 (optional)前端：\ https://github.ibm.com/jiehou/yoshop2.0-uniapp
 
@@ -215,6 +217,6 @@ http://localhost:8085/store/
 或者直接下载编译完成的
 https://github.ibm.com/jiehou/yoshop2.0-uniapp/releases/tag/v2.11
 
-.. |文本 AI 生成的内容可能不正确。| image:: /_static/images/yoshop/image1.png
-   :width: 5.33408in
-   :height: 1.81275in
+
+前端访问地址：http://localhost/static/yoshop
+
