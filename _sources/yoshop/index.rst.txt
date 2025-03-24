@@ -41,7 +41,7 @@ Optional: 后台VUE端（前端工程文件，部署时无需下载，仅前端�
 
 注：gitee上yoshop新版本要求db版本已不适配xampp7，故使用yoshop2.11版本
 
-.. |文本 AI 生成的内容可能不正确。| image:: /_static/images/yoshop/image1.png
+.. image:: /_static/images/yoshop/image1.png
    :width: 5.33408in
    :height: 1.81275in
 
